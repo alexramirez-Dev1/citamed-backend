@@ -17,7 +17,15 @@ const ROL_ADMIN = 3;
 function db(): PDO {
   static $pdo = null;
   if ($pdo === null) {
-    $pdo = new PDO('mysql:host=localhost;dbname=citamed;charset=utf8mb4', 'root', '', [
+    $host = 'sql.freedb.tech';
+    $port = '3306';
+    $dbname = 'freedb_luMBdvBM';
+    $user = 'u_vBOYOQ';
+    $pass = 'CTDzc2vYTCzM';
+
+    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
+
+    $pdo = new PDO($dsn, $user, $pass, [
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
       PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
